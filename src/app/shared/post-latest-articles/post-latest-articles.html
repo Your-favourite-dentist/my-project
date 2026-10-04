@@ -1,0 +1,49 @@
+<a [routerLink]="['/blog', post.slug]"
+   class="group flex flex-col h-full bg-gray-800/50 border border-gray-700 rounded-2xl overflow-hidden hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300">
+
+  <div class="relative overflow-hidden">
+    <img [src]="post.image" [alt]="post.title"
+         class="w-full h-48 object-cover group-hover:scale-105 transition duration-500">
+    <span class="absolute top-3 right-3 px-3 py-1 text-xs font-bold text-white bg-gray-900/80 rounded-full">
+      {{ post.category }}
+    </span>
+  </div>
+
+  <div class="flex flex-col flex-1 p-5">
+
+    <div class="flex items-center gap-2 text-xs text-gray-400 mb-3">
+      <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+      </svg>
+      <span>{{ post.readTime }}</span>
+      <span>•</span>
+      <span>{{ post.date }}</span>
+    </div>
+
+    <h3 class="text-lg font-bold text-white mb-2 group-hover:text-orange-400 transition">
+      {{ post.title }}
+    </h3>
+
+    <p class="text-gray-400 text-sm mb-4 line-clamp-2">
+      {{ post.excerpt }}
+    </p>
+
+    <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-700">
+      <div class="flex items-center gap-2">
+        <img [src]="post.author.avatar" [alt]="post.author.name"
+             class="w-9 h-9 rounded-full object-cover">
+        <div>
+          <p class="text-sm text-white">{{ post.author.name }}</p>
+          <p class="text-xs text-gray-500">{{ post.author.role }}</p>
+        </div>
+      </div>
+
+      <span class="flex items-center justify-center w-8 h-8 text-orange-400 border border-orange-500/40 rounded-full group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300" aria-hidden="true">
+        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14 7-5 5 5 5"/>
+        </svg>
+      </span>
+    </div>
+
+  </div>
+</a>
